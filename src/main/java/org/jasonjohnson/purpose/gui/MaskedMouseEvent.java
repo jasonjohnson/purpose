@@ -9,29 +9,25 @@ import java.awt.event.MouseEvent;
  * getX(), getY() and dispatchMouseEvent().
  */
 public class MaskedMouseEvent {
-  public static int MOUSE_CLICKED = MouseEvent.MOUSE_CLICKED;
-  public static int MOUSE_PRESSED = MouseEvent.MOUSE_PRESSED;
-  public static int MOUSE_RELEASED = MouseEvent.MOUSE_RELEASED;
+  private MouseEvent mouseEvent;
   
-  public int id = 0;
-  public int x = 0;
-  public int y = 0;
+  public MaskedMouseEvent(MouseEvent mouseEvent) {
+    this.mouseEvent = mouseEvent;
+  }
   
-  public MaskedMouseEvent(MouseEvent e) {
-    id = e.getID();
-    x = e.getX();
-    y = e.getY();
+  public MouseEvent getMouseEvent() {
+    return mouseEvent;
   }
   
   public int getID() {
-    return id;
+    return getMouseEvent().getID();
   }
   
   public int getX() {
-    return Math.abs(x);
+    return Math.abs(getMouseEvent().getX());
   }
   
   public int getY() {
-    return Math.abs(y);
+    return Math.abs(getMouseEvent().getY());
   }
 }

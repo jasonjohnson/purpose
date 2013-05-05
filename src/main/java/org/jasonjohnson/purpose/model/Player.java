@@ -3,6 +3,7 @@ package org.jasonjohnson.purpose.model;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 import org.jasonjohnson.purpose.gui.MaskedMouseEvent;
 
 
@@ -17,7 +18,7 @@ public class Player extends Entity {
   
   @Override
   public void mouseInput(MaskedMouseEvent e) {
-    if(e.getID() == MaskedMouseEvent.MOUSE_PRESSED) {
+    if(e.getID() == MouseEvent.MOUSE_PRESSED) {
       x = e.getX();
       y = e.getY();
     }
